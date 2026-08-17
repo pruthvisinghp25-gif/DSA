@@ -7,12 +7,11 @@ class Solution:
         col = cols - 1
 
         while row < rows and col >= 0:
-            value = matrix[row][col]
 
-            if value == target:
+            if matrix[row][col] == target:
                 return True
 
-            elif value < target:
+            elif matrix[row][col] < target:
                 row += 1
 
             else:
