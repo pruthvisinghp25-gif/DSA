@@ -5,16 +5,16 @@ class ListNode:
         self.next = next
 class Solution:
     def sortList(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        
+
         if not head or not head.next:
             return head
-
+        
         fast = head.next
         slow = head
 
         while fast and fast.next:
             fast = fast.next.next
-            slow = slow.next
+            slow = slow.next 
 
         second = slow.next
         slow.next = None 
@@ -36,9 +36,74 @@ class Solution:
 
             current = current.next
 
-        current.next = left if left else right
+        current.next = right if right else left
 
         return dummy.next
+
+            
+
+
+
+
+
+
+
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        # if not head or not head.next:
+        #     return head
+
+        # fast = head.next
+        # slow = head
+
+        # while fast and fast.next:
+        #     fast = fast.next.next
+        #     slow = slow.next
+
+        # second = slow.next
+        # slow.next = None 
+
+        # left = self.sortList(head)
+        # right = self.sortList(second)
+
+        # dummy = ListNode(0)
+        # current = dummy
+
+        # while left and right:
+        #     if left.val < right.val:
+        #         current.next = left
+        #         left = left.next
+
+        #     else:
+        #         current.next = right
+        #         right = right.next
+
+        #     current = current.next
+
+        # current.next = left if left else right
+
+        # return dummy.next
 
      
          
