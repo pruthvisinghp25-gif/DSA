@@ -6,12 +6,16 @@ class Solution:
 
         for num in nums:
             prfx_sum += num
-
-            need = prfx_sum - k
-
-            if need in HashMap:
-                count += HashMap[need]
-                
+            count += HashMap.get(prfx_sum - k, 0)
             HashMap[prfx_sum] = HashMap.get(prfx_sum, 0) + 1
 
         return count 
+
+        #     need = prfx_sum - k
+
+        #     if need in HashMap:
+        #         count += HashMap[need]
+                
+        #     HashMap[prfx_sum] = HashMap.get(prfx_sum, 0) + 1
+
+        # return count 
