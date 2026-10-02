@@ -14,13 +14,13 @@ class Solution:
 
             need = prfx_sum 
 
-            if prfx_sum in freq:
-                length = i - freq[prfx_sum]
+            if need in freq:
+                length = i - freq[need]
 
                 if length > count:
                     count = length
 
-            if prfx_sum not in freq:
-                freq[prfx_sum] = i
+            if need not in freq:
+                freq[need] = i
 
         return count 
