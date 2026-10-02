@@ -7,12 +7,17 @@ class Solution:
         for num in nums:
             prfx_sum += num
 
-            need = prfx_sum % k
+            rem = prfx_sum % k
 
-            if need in freq:
-                count += freq[need]
+            if rem in freq:
+                count += freq[rem]
 
-            freq[need] = freq.get(need, 0)+1
+            if rem not in freq:
+                freq[rem] = 1
+
+            else:
+                freq[rem] += 1
+            # freq[rem] = freq.get(rem, 0)+1
 
         return count 
                 
