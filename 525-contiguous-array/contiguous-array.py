@@ -1,25 +1,26 @@
-class Solution(object):
-    def findMaxLength(self, nums):
-        freq = {0: -1}
+class Solution:
+    def findMaxLength(self, nums: List[int]) -> int:
+        
+        freq = {0 : -1}
+        count = 0
         prfx_sum = 0
-        longest = 0
 
-        for i in range(len(nums)):
-            if nums[i] == 0:
+        for i, num in enumerate(nums):
+            if num == 0:
                 prfx_sum -= 1
 
             else:
                 prfx_sum += 1
 
-            if prfx_sum in freq:
-                longest = max(longest, i - freq[prfx_sum])
+            need = prfx_sum 
 
-            else:
+            if prfx_sum in freq:
+                length = i - freq[prfx_sum]
+
+                if length > count:
+                    count = length
+
+            if prfx_sum not in freq:
                 freq[prfx_sum] = i
 
-        return longest
-
-
-
-        
-        
+        return count 
