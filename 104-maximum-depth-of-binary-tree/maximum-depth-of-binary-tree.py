@@ -10,8 +10,9 @@ class Solution:
     
         if root is None:
             return 0
+
         q = deque([root])
-        result = []
+        # result = []
         depth = 0
 
         while q:
@@ -19,7 +20,7 @@ class Solution:
 
             for _ in range(lev_size):
                 node = q.popleft()
-                result.append(node.val)
+                # result.append(node.val)
 
                 if node.left:
                     q.append(node.left)
