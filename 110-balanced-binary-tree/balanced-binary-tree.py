@@ -6,15 +6,15 @@ class TreeNode:
         self.right = right
 class Solution:
     def isBalanced(self, root: TreeNode | None) -> bool:
-           
-        def height(node):
+        def hight(node):
+
             if node is None:
                 return 0
-                
-            left = height(node.left)
-            right = height(node.right)
 
-            if left == -1 or right == -1:
+            left = hight(node.left)
+            right = hight(node.right)
+
+            if (left == -1 or right == -1):
                 return -1
 
             if abs(left - right) > 1:
@@ -22,7 +22,29 @@ class Solution:
 
             return 1 + max(left, right)
 
-        return height(root) != -1
+        return hight(root) != -1
+
+
+
+
+
+           
+        # def height(node):
+        #     if node is None:
+        #         return 0
+                
+        #     left = height(node.left)
+        #     right = height(node.right)
+
+        #     if left == -1 or right == -1:
+        #         return -1
+
+        #     if abs(left - right) > 1:
+        #         return -1
+
+        #     return 1 + max(left, right)
+
+        # return height(root) != -1
         
 
         
