@@ -20,7 +20,7 @@ class Solution:
         if root == p or root == q:
             return root
 
-        return right if not left else left
+        return right if left is None else left
 
         
 
