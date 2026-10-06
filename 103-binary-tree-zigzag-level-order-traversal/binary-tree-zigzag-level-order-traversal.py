@@ -11,8 +11,8 @@ class Solution:
 
         queue = deque([root])
         result = []
-        # count = 0
-        L_R = True
+        count = 0
+        # L_R = True
 
         while queue:
             lev_size = len(queue)
@@ -29,13 +29,13 @@ class Solution:
                 if node.right:
                     queue.append(node.right)
 
-            if not L_R:
+            if count == 1:
                 level.reverse()
 
             result.append(level)
 
-            # count = 1 - count
+            count = 1 - count
 
-            L_R = not L_R
+            # L_R = not L_R
 
         return result
